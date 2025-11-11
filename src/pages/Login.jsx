@@ -13,10 +13,10 @@ export default function Login({ onLogin }) {
         setLoading(true);
         setErr("");
         try {
-            const res = await fetch("http://localhost:4000/api/auth/login", {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE}/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify({ email, password }),
             });
 
             const data = await res.json();
@@ -35,7 +35,7 @@ export default function Login({ onLogin }) {
     return (
         <div style={styles.container}>
             <div style={styles.card}>
-                <h2 style={styles.title}>Login</h2>
+                <h2 style={styles.title}>Quantum JAP Login</h2>
 
                 {err && <div style={styles.error}>{err}</div>}
 
@@ -43,7 +43,7 @@ export default function Login({ onLogin }) {
                     <input
                         type="email"
                         value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
                         style={styles.input}
                         placeholder="Email"
                         disabled={loading}
@@ -52,7 +52,7 @@ export default function Login({ onLogin }) {
                     <input
                         type="password"
                         value={password}
-                        onChange={e => setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
                         style={styles.input}
                         placeholder="Password"
                         disabled={loading}
@@ -63,10 +63,10 @@ export default function Login({ onLogin }) {
                         disabled={loading}
                         style={{
                             ...styles.button,
-                            ...(loading && styles.buttonLoading)
+                            ...(loading && styles.buttonLoading),
                         }}
                     >
-                        {loading ? "Signing in..." : "Sign in"}
+                        {loading ? "Signing in..." : "Sign In"}
                     </button>
                 </form>
             </div>
@@ -80,57 +80,62 @@ const styles = {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "#0f172a",
-        padding: "20px"
+        background:
+            "radial-gradient(circle at top left, #1e3a8a, #0f172a 60%, #000 100%)",
+        padding: "20px",
     },
     card: {
-        background: "white",
-        padding: "30px",
-        borderRadius: "10px",
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        background: "rgba(255, 255, 255, 0.1)",
+        backdropFilter: "blur(12px)",
+        padding: "40px",
+        borderRadius: "15px",
+        boxShadow: "0 0 25px rgba(59,130,246,0.3)",
         width: "100%",
-        maxWidth: "400px"
+        maxWidth: "420px",
+        textAlign: "center",
+        color: "white",
+        animation: "fadeIn 0.8s ease-in-out",
     },
     title: {
-        textAlign: "center",
-        margin: "0 0 20px 0",
-        color: "#1e293b",
-        fontSize: "24px"
+        fontSize: "26px",
+        fontWeight: "600",
+        marginBottom: "20px",
     },
     form: {
         display: "flex",
         flexDirection: "column",
-        gap: "15px"
+        gap: "15px",
     },
     input: {
-        padding: "15px",
-        border: "1px solid #ddd",
-        borderRadius: "5px",
+        padding: "14px",
+        border: "1px solid rgba(255,255,255,0.2)",
+        borderRadius: "8px",
         fontSize: "16px",
-        width: "100%",
-        boxSizing: "border-box"
+        background: "rgba(255,255,255,0.05)",
+        color: "#fff",
+        outline: "none",
     },
     button: {
-        padding: "15px",
-        background: "#3b82f6",
+        padding: "14px",
+        background: "linear-gradient(90deg, #2563eb, #3b82f6)",
         color: "white",
         border: "none",
-        borderRadius: "5px",
+        borderRadius: "8px",
         fontSize: "16px",
         cursor: "pointer",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        transition: "all 0.3s ease",
     },
     buttonLoading: {
         opacity: "0.7",
-        cursor: "not-allowed"
+        cursor: "not-allowed",
     },
     error: {
-        background: "#fee2e2",
-        color: "#dc2626",
+        background: "rgba(239,68,68,0.2)",
+        color: "#fca5a5",
         padding: "10px",
         borderRadius: "5px",
         marginBottom: "15px",
-        textAlign: "center",
-        fontSize: "14px"
-    }
+        fontSize: "14px",
+    },
 };

@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4000/api";
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 export async function apiFetch(path, token, opts = {}) {
   const headers = opts.headers || {};
