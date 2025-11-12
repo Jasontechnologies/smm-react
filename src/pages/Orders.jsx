@@ -319,22 +319,22 @@ export default function Orders({ token }) {
 
                 <div style={styles.menuItems}>
                     <Link style={styles.menuItem} to="/" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>🏠</span> Dashboard
+                        <span style={styles.menuIcon}></span> Dashboard
                     </Link>
                     <Link style={styles.menuItem} to="/new-order" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>⚡</span> Add Order
+                        <span style={styles.menuIcon}></span> Add Order
                     </Link>
                     <Link style={styles.menuItem} to="/orders" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>📊</span> Orders
+                        <span style={styles.menuIcon}></span> Orders
                     </Link>
                     <Link style={styles.menuItem} to="/settings" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>⚙️</span> Settings
+                        <span style={styles.menuIcon}></span> Settings
                     </Link>
                     <a style={styles.menuItem} href="https://justanotherpanel.com/#signin-form" target="_blank" rel="noopener noreferrer" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>🔗</span> JAP Sign-in
+                        <span style={styles.menuIcon}></span> JAP Sign-in
                     </a>
                     <a style={styles.menuItem} href="https://justanotherpanel.com/addfunds" target="_blank" rel="noopener noreferrer" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>💎</span> Add Funds
+                        <span style={styles.menuIcon}></span> Add Funds
                     </a>
                 </div>
             </div>
@@ -398,7 +398,7 @@ export default function Orders({ token }) {
 
                 <div style={{ ...styles.statsContainer, ...(isMobile ? styles.statsContainerMobile : {}) }}>
                     <div style={styles.statCard}>
-                        <div style={styles.statIcon}>📦</div>
+                        <div style={styles.statIcon}></div>
                         <div style={styles.statContent}>
                             <div style={styles.statNumber}>{orders.length}</div>
                             <div style={styles.statLabel}>Total</div>
@@ -656,7 +656,10 @@ const styles = {
         fontFamily: "'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif",
         position: "relative",
         overflow: "hidden",
-        WebkitOverflowScrolling: "touch"
+        WebkitOverflowScrolling: "touch",
+        width: "100vw",
+        margin: 0,
+        padding: 0,
     },
     animatedBg: {
         position: "absolute",

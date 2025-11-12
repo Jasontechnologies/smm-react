@@ -91,22 +91,22 @@ export default function Settings({ token }) {
 
                 <div style={styles.menuItems}>
                     <Link style={styles.menuItem} to="/" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>🏠</span> Dashboard
+                        <span style={styles.menuIcon}></span> Dashboard
                     </Link>
                     <Link style={styles.menuItem} to="/new-order" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>⚡</span> Add Order
+                        <span style={styles.menuIcon}></span> Add Order
                     </Link>
                     <Link style={styles.menuItem} to="/orders" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>📊</span> Orders
+                        <span style={styles.menuIcon}></span> Orders
                     </Link>
                     <Link style={styles.menuItem} to="/settings" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>⚙️</span> Settings
+                        <span style={styles.menuIcon}></span> Settings
                     </Link>
                     <a style={styles.menuItem} href="https://justanotherpanel.com/#signin-form" target="_blank" rel="noopener noreferrer" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>🔗</span> JAP Sign-in
+                        <span style={styles.menuIcon}></span> JAP Sign-in
                     </a>
                     <a style={styles.menuItem} href="https://justanotherpanel.com/addfunds" target="_blank" rel="noopener noreferrer" onClick={handleMenuClick}>
-                        <span style={styles.menuIcon}>💎</span> Add Funds
+                        <span style={styles.menuIcon}></span> Add Funds
                     </a>
                 </div>
             </div>
@@ -179,7 +179,7 @@ export default function Settings({ token }) {
                                     </>
                                 ) : (
                                     <>
-                                        <span style={styles.buttonIcon}>💾</span>
+                                        <span style={styles.buttonIcon}></span>
                                         SAVE SETTINGS
                                     </>
                                 )}
@@ -203,13 +203,13 @@ export default function Settings({ token }) {
                 {isMobile && (
                     <div style={styles.quickActions}>
                         <Link style={styles.quickAction} to="/">
-                            <span style={styles.quickIcon}>🏠</span> Dashboard
+                            <span style={styles.quickIcon}></span> Dashboard
                         </Link>
                         <Link style={styles.quickAction} to="/new-order">
-                            <span style={styles.quickIcon}>⚡</span> Add Order
+                            <span style={styles.quickIcon}></span> Add Order
                         </Link>
                         <Link style={styles.quickAction} to="/orders">
-                            <span style={styles.quickIcon}>📊</span> Orders
+                            <span style={styles.quickIcon}></span> Orders
                         </Link>
                     </div>
                 )}
@@ -225,7 +225,10 @@ const styles = {
         background: "linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%)",
         fontFamily: "'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif",
         position: "relative",
-        overflow: "hidden"
+        overflow: "hidden",
+        width: "100vw",
+        margin: 0,
+        padding: 0,
     },
     animatedBg: {
         position: "absolute",
